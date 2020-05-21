@@ -8,3 +8,9 @@ Web Social Service with Python & Django
 - [ ] Join
 - [ ] Login
 - [ ] Search
+
+## Scripts
+
+'''
+git clone https://github.com/jsh15932/Python_Django_Social_Service.git
+'''
