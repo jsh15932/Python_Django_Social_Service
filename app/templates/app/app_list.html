@@ -1,0 +1,7 @@
+<h1> list_view.html </h1>
+{% for obj in object_list %}
+    <h2>{{ obj.content }}</h2>
+    {{ obj.timestamp }}</br>
+    {{ obj.timestamp|timesince }}</br>
+    <hr>
+{% endfor %}
