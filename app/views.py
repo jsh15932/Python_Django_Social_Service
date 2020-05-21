@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import DetailView, ListView
 
 from .models import App
@@ -8,7 +8,10 @@ class AppDetailView(DetailView):
     queryset = App.objects.all()
 
     def get_object(self):
-        return App.objects.get(id=1)
+        print(self.kwargs)
+        pk = self.kwargs.get("pk")
+        obj = get_object_or_404(App, pk=pk)
+        return App.objects.get(id=pk)
 
 class AppListView(ListView):
     # template_name = "app/list_view.html"

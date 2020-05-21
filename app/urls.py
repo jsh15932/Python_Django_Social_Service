@@ -1,7 +1,9 @@
-from django.conf.urls import url
-from .views import app_detail_view, app_list_view, AppListView, AppDetailView
+from django.conf.urls import url, include
+from django.conf import settings
+from .views import *
 
 urlpatterns = [
-    url(r'^$', app_list_view, name='list'),
-    url(r'^1/$', app_detail_view, name='detail'),
+    url(r'^$', AppListView.as_view(), name='list'),
+    url(r'^create/$', AppCreateView.as_view(), name='create'),
+    url(r'^(?P<pk>\d+)/$', AppDetailView.as_view(), name='detail'),
 ]
